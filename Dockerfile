@@ -22,10 +22,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && cd tg \
     && git submodule update --init --recursive --force \
     && ./configure \
-    && make
-#    && apk del .build-deps
-#&& rm -r /usr/src/build
-
-WORKDIR /
+    && make \
+    && cp /usr/src/build/tg/bin/* /usr/local/bin
 
 CMD ["telegram-cli"]
