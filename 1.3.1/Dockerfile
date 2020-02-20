@@ -1,8 +1,8 @@
-FROM alpine:3.8
+FROM php:5.6.40-cli-alpine
 
 ARG TG_VERSION=6547c0b
 
-LABEL maintainer="Carlos Remuzzi <carlosremuzzi@gmail.com>"
+LABEL maintainer="cnxzcxy <cnxzcxy@gmail.com>"
 LABEL version=1.3.1
 
 WORKDIR /usr/src/build
@@ -34,4 +34,4 @@ RUN apk add --no-cache \
 
 WORKDIR /
 
-CMD ["telegram-cli"]
+CMD ["telegram-cli --json -P 3345"]
